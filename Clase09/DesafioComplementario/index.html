@@ -7,7 +7,7 @@
     <title>JavaScript - Clase 09</title>
 </head>
 <body>
-    <h1>JavaScript - Desafío Clase 09</h1>
+    <h1>JavaScript - Desafío Complementario Clase 09</h1>
 
     <h2>Control de Cuentas</h2>
 
@@ -21,27 +21,15 @@
     <hr>
 
     <h3 id="usuario">Usuario: </h3>
-
-    <br>
-    <br>
-    <label for="">Ingrese la cuenta</label>
-    <input type="text" id="nombre_cuenta">
-    <br>
-    <br>
-    <label for="">Ingrese importe</label>
-    <input type="text" id="importe_cuenta">
-    <br>
-    <br>
-    <label for="">Ingrese cantidad de cuotas</label>
-    <input type="text" id="cuotas_cuenta" onchange="CargarCuotas(event)">
-    <br>
     <br>
 
-    <h3>Cuenta:</h3>
+    <h3>Cuentas Diponibles:</h3>
+    <button onclick="CargarCuentasDisponibles()">Mostrar</button>
 
-    <ul id="lista_cuotas"></ul>
+    <ul id="lista_cuentas_disponibles"></ul>
 
     <script src="./usuario.js"></script>
+    <script src="./cuentas.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>
