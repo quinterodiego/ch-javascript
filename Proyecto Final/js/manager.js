@@ -7,6 +7,7 @@ const CrearUsuario = () => {
     formulario.addEventListener('submit', function(e) {
         nombreUsuario = document.getElementById('usuario').value;
         usuarioActual = new Usuario(nombreUsuario);
+        console.log(usuarioActual);
         listaUsuarios.push(usuarioActual);
         UsuarioActual(usuarioActual);
         ListarUsuarios();
@@ -47,14 +48,11 @@ const UsuarioActual= (usuario) => {
 
 const ListarUsuarios = () => {
     const comboListaUsuario = document.getElementById('listaUsuarios');
-    const elemento = document.createElement('a');
-    console.log("Lista usuarios", listaUsuarios);
-    if(listaUsuarios != null) {
-        listaUsuarios.forEach(e => {
-            elemento.innerHTML = `<a class="dropdown-item" href="#">${e.nombre}</a>`;
-            comboListaUsuario.appendChild(elemento);
-        });
-    }
+    let texto = `<option class="dropdown-item" href="#">Cambiar usuario</option>`;
+    listaUsuarios.forEach(e => {
+        texto += `<option class="dropdown-item" href="#" class="optionUsuario">${e.nombre}</option>`;
+    });
+    comboListaUsuario.innerHTML = texto
 };
 
 const ListarCuentas = (usuario) => {

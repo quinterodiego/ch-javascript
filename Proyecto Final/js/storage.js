@@ -7,7 +7,9 @@ const Guardar = () => {
 };
 
 const CargarUsuarios = () => {
-    listaUsuarios = JSON.parse(localStorage.getItem("usuarios"));
-    console.log("Carga", listaUsuarios);
-    ListarUsuarios();
+    if(localStorage.length > 0){
+        listaUsuarios = JSON.parse(localStorage.getItem("usuarios"));
+        console.log("Carga", listaUsuarios);
+        ListarUsuarios();
+    }
 };
