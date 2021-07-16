@@ -1,7 +1,9 @@
 CargarUsuarios();
 
-CrearUsuario();
+//CrearUsuario();
 
-AgregarCuenta();
+//AgregarCuenta();
 
 Guardar();
+
+Borrar();

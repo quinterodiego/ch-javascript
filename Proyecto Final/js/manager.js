@@ -2,36 +2,29 @@ var nombreUsuario;
 var usuarioActual;
 var listaUsuarios = [];
 
-const CrearUsuario = () => {
+const CrearUsuario = (event) => {
     const formulario = document.getElementById('crear-usuario');
-    formulario.addEventListener('submit', function(e) {
-        nombreUsuario = document.getElementById('usuario').value;
-        usuarioActual = new Usuario(nombreUsuario);
-        console.log(usuarioActual);
-        listaUsuarios.push(usuarioActual);
-        UsuarioActual(usuarioActual);
-        ListarUsuarios();
-        VaciarListaCuentas();
-        ResetearFormulario(formulario);
-        e.preventDefault();
-    });
+    nombreUsuario = document.getElementById('usuario').value;
+    usuarioActual = new Usuario(nombreUsuario);
+    listaUsuarios.push(usuarioActual);
+    UsuarioActual(usuarioActual);
+    ListarUsuarios();
+    VaciarListaCuentas();
+    ResetearFormulario(formulario);
+    event.preventDefault();
 };
 
-const AgregarCuenta = () => {
+const AgregarCuenta = (event) => {
     const formulario = document.getElementById('formularioCuenta');
-    formulario.addEventListener('submit', function(e){
-        const nombre = document.getElementById('nombre').value;
-        const importe = document.getElementById('importe').value;
-        const vencimiento = document.getElementById('vencimiento').value;
+    const nombre = document.getElementById('nombre').value;
+    const importe = document.getElementById('importe').value;
+    const vencimiento = document.getElementById('vencimiento').value;
+    const cuenta = new Cuenta(nombre, importe, vencimiento);
+    usuarioActual.cuentas.push(cuenta);
 
-        const cuenta = new Cuenta(nombre, importe, vencimiento);
-        usuarioActual.ListaCuentas(cuenta);
-
-        ListarCuentas(usuarioActual);
-
-        ResetearFormulario(formulario);
-        e.preventDefault();
-    });
+    ListarCuentas(usuarioActual);
+    ResetearFormulario(formulario);
+    event.preventDefault();
 };
 
 const ResetearFormulario = (formulario) => {
@@ -39,41 +32,61 @@ const ResetearFormulario = (formulario) => {
 };
 
 const UsuarioActual= (usuario) => {
-    const usuarioActual = document.getElementById('usuarioActual');
-    usuarioActual.innerHTML = '';
+    usuarioActual = usuario;
+    const nombreUsuarioActual = document.getElementById('nombreUsuarioActual');
     const elemento = document.createElement('span');
+
+    nombreUsuarioActual.innerHTML = '';
     elemento.innerHTML = `<span>Usuario Actual: <strong>${usuario.nombre}</strong></span>`;
-    usuarioActual.appendChild(elemento);
+    nombreUsuarioActual.appendChild(elemento);
+
+    ListarCuentas(usuarioActual);
 }
 
 const ListarUsuarios = () => {
     const comboListaUsuario = document.getElementById('listaUsuarios');
     let texto = `<option class="dropdown-item" href="#">Cambiar usuario</option>`;
     listaUsuarios.forEach(e => {
-        texto += `<option class="dropdown-item" href="#" class="optionUsuario">${e.nombre}</option>`;
+        texto += `<option class="dropdown-item" href="#">${e.nombre}</option>`;
     });
-    comboListaUsuario.innerHTML = texto
+    comboListaUsuario.innerHTML = texto;
 };
 
 const ListarCuentas = (usuario) => {
     const listaCuenta = document.getElementById('listaCuentas');
-    const elemento = document.createElement('tr');
+    let texto = "";
     usuario.cuentas.forEach(e => {
-        elemento.innerHTML = `
-            <tr class="card-body d-flex justify-content-around">
-                <td>${e.nombre}</td>
-                <td>$${e.importe}</td>
-                <td>${e.vencimiento}</td>
+        texto += `
+            <tr class="card-body justify-content-around">
+                <td align="center">${e.nombre}</td>
+                <td align="center">$${e.importe}</td>
+                <td align="center">${e.vencimiento}</td>
+                <td align="center">
+                    <a href="#" class="text-primary">
+                        <i class="far fa-edit"></i>
+                    </a>
+                </td>
+                <td align="center">
+                    <a href="#" class="text-danger">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                </td>
             </tr>
         `;
-        listaCuenta.appendChild(elemento);
+        listaCuenta.innerHTML = texto;
     })
 };
 
 const VaciarListaCuentas = () => {
     const elemento = document.getElementById('listaCuentas');
-    console.log(elemento.childNodes.length);
     while(elemento.childNodes.length >= 1) {
         elemento.removeChild(elemento.firstChild);
     }
 }
+
+const CambiarUsuario = () => {
+    let e = document.getElementById("listaUsuarios");
+    let strUsuario = e.options[e.selectedIndex].text;
+    UsuarioActual(listaUsuarios.find(e => strUsuario == e.nombre));
+    console.log(usuarioActual);
+};

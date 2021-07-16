@@ -3,8 +3,4 @@ class Usuario {
         this.nombre =  pNombre;
         this.cuentas = [];
     }
-
-    ListaCuentas = (cuenta) => {
-        this.cuentas.push(cuenta);
-    }
 }

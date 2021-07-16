@@ -6,10 +6,16 @@ const Guardar = () => {
     });
 };
 
+const Borrar = () => {
+    document.getElementById('formBorrar').addEventListener('submit', function(e){
+        localStorage.clear();
+        e.preventDefault();
+    });
+};
+
 const CargarUsuarios = () => {
     if(localStorage.length > 0){
         listaUsuarios = JSON.parse(localStorage.getItem("usuarios"));
-        console.log("Carga", listaUsuarios);
         ListarUsuarios();
     }
 };

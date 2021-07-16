@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center"
                 <a class="navbar-brand d-flex align-items-center" href="./index.html">
                     <!--<i class="fas fa-file-invoice-dollar p-2"></i>-->
                     <h1>Control Personal de Cuentas</h1>
@@ -31,7 +31,7 @@
                                 <input type="text" id="usuario" placeholder="Ingrese un nombre" class="form-control m-3">
                             </div>
                             <div class="col-auto">
-                                <input type="submit" value="Crear" class="btn btn-primary m-3">
+                                <button type="submit" value="Crear" class="btn btn-primary m-3" onclick="CrearUsuario(event)">Crear</button>
                             </div>
                         </div>
                     </form>
@@ -40,11 +40,11 @@
         </div>
         <div class="row pt-5">
             <div class="col-md-4">
-                <div class="alert alert-success" id="usuarioActual">Debe crear o elegir un usuario</div>
+                <div class="alert alert-success" id="nombreUsuarioActual">Debe crear o elegir un usuario</div>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4 text-right">
-                <select class="p-2 w-100" id="listaUsuarios">
+                <select class="p-2 w-100" id="listaUsuarios" onchange="CambiarUsuario()">
                     <option class="dropdown-item" href="#">No hay usuarios</option>
                 </select>
             </div>
@@ -69,7 +69,7 @@
                             <input type="date" id="vencimiento" class="form-control mt-3">
                         </div>
                         <div class="d-grid gap-2 mt-3">
-                            <input type="submit" value="Agregar" class="btn btn-primary">
+                            <button type="submit" value="Agregar" class="btn btn-primary" onclick="AgregarCuenta(event)">Agregar</button>
                         </div>
                     </form>
                 </div>
@@ -80,12 +80,14 @@
                         <h4>Lista de Cuentas</h4>
                     </div>
                     <div class="card text-center">
-                        <table class="table">
+                        <table class="table table-hover table-sm">
                             <thead>
                                 <tr>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Importe</th>
                                     <th scope="col">Vencimiento</th>
+                                    <th scope="col">Editar</th>
+                                    <th scope="col">Borrar</th>
                                 </tr>
                             </thead>
                             <tbody id="listaCuentas">
@@ -96,9 +98,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-6 text-right">
                 <form id="formGuardar" class="card-body">
-                    <input type="submit" value="Guardar" class="btn btn-primary m-3">
+                    <input type="submit" value="Guardar en BD" class="btn btn-primary m-3">
+                </form>
+            </div>
+            <div class="col-md-6 text-left">
+                <form id="formBorrar" class="card-body">
+                    <input type="submit" value="Borrar BD" class="btn btn-primary m-3">
                 </form>
             </div>
         </div>
