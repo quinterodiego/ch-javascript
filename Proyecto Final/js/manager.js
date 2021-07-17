@@ -88,5 +88,4 @@ const CambiarUsuario = () => {
     let e = document.getElementById("listaUsuarios");
     let strUsuario = e.options[e.selectedIndex].text;
     UsuarioActual(listaUsuarios.find(e => strUsuario == e.nombre));
-    console.log(usuarioActual);
 };
