@@ -12,15 +12,17 @@
 <body>
     <div class="container">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center"
+            <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
+                <div class="logo"></div>
                 <a class="navbar-brand d-flex align-items-center" href="./index.html">
                     <!--<i class="fas fa-file-invoice-dollar p-2"></i>-->
                     <h1>Control Personal de Cuentas</h1>
                 </a>
             </nav>
         </header>
-        <div class="row pt-5">
-            <div class="col-md-12">
+        <div class="row pt-5 align-items-center">
+            <div class="col-md-6 logo-cover"></div>
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header text-center">
                         <h4>Crear Usuario</h4>
@@ -39,77 +41,12 @@
             </div>
         </div>
         <div class="row pt-5">
-            <div class="col-md-4">
-                <div class="alert alert-success" id="nombreUsuarioActual">Debe crear o elegir un usuario</div>
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="alert alert-success text-center" id="nombreUsuarioActual">Debe crear o elegir un usuario</div>
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4 text-right">
-                <select class="p-2 w-100" id="listaUsuarios" onchange="CambiarUsuario()">
-                    <option class="dropdown-item" href="#">No hay usuarios</option>
-                </select>
-            </div>
+            <div class="col-md-3"></div>
         </div>
-        <div class="row pt-2">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <h4>Agregar Cuenta</h4>
-                    </div>
-                    <form id="formularioCuenta" class="card-body">
-                        <div class="form-group">
-                            <label class="form-label">Nombre</label>
-                            <input type="text" id="nombre" placeholder="Ingrese un nombre" class="form-control mt-3">
-                        </div>
-                        <div class="form-group mt-3">
-                            <label class="form-label">Importe</label>
-                            <input type="text" id="importe" placeholder="Ingrese un importe" class="form-control mt-3">
-                        </div>
-                        <div class="form-group mt-3">
-                            <label class="form-label">Vencimiento</label>
-                            <input type="date" id="vencimiento" class="form-control mt-3">
-                        </div>
-                        <div class="d-grid gap-2 mt-3">
-                            <button type="submit" value="Agregar" class="btn btn-primary" onclick="AgregarCuenta(event)">Agregar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <h4>Lista de Cuentas</h4>
-                    </div>
-                    <div class="card text-center">
-                        <table class="table table-hover table-sm">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Importe</th>
-                                    <th scope="col">Vencimiento</th>
-                                    <th scope="col">Editar</th>
-                                    <th scope="col">Borrar</th>
-                                </tr>
-                            </thead>
-                            <tbody id="listaCuentas">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 text-right">
-                <form id="formGuardar" class="card-body">
-                    <button type="submit" value="Guardar en BD" class="btn btn-primary m-3" onclick="Guardar(event)">Guardar en BD</button>
-                </form>
-            </div>
-            <div class="col-md-6 text-left">
-                <form id="formBorrar" class="card-body">
-                    <button type="submit" value="Borrar BD" class="btn btn-primary m-3" onclick="Borrar(event)">Borrar BD</button>
-                </form>
-            </div>
-        </div>
-    </div>
     <footer>
         <div class="footer w-100 text-center p-5">
             Control Personal de Cuentas - Todos los derechos reservados &copy; 2021

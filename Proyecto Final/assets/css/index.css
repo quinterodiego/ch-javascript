@@ -7,3 +7,31 @@ body {
 a:hover {
     cursor: pointer;
 }
+
+.logo {
+    width: 70px;
+    height: 70px;
+    background-image: url('./../../img/cubo.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.logo-cover {
+    width: 600px;
+    height: 600px;
+    background-image: url('./../../img/cubo.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.red {
+background-color:#FF735A;
+}
+
+.blue {
+    background-color: #267486;
+}
+
+.yellow {
+    background-color: #FAB452;
+}

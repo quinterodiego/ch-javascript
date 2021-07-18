@@ -1,16 +1,10 @@
 const Guardar = () => {
-    document.getElementById('formGuardar').addEventListener('submit', function(e){
-        let usuarios = JSON.stringify(listaUsuarios);
-        localStorage.setItem("usuarios", usuarios);
-        e.preventDefault();
-    });
+    let usuarios = JSON.stringify(listaUsuarios);
+    localStorage.setItem("usuarios", usuarios);
 };
 
 const Borrar = () => {
-    document.getElementById('formBorrar').addEventListener('submit', function(e){
-        localStorage.clear();
-        e.preventDefault();
-    });
+    localStorage.clear();
 };
 
 const CargarUsuarios = () => {
