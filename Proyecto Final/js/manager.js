@@ -1,23 +1,3 @@
-var nombreUsuario;
-var usuarioActual;
-var listaUsuarios = [];
-
-const CrearUsuario = (event) => {
-    const formulario = document.getElementById('crear-usuario');
-    nombreUsuario = document.getElementById('usuario').value;
-    usuarioActual = new Usuario(nombreUsuario);
-    mensajeUsuario.innerHTML = `Bienvenido ${usuarioActual}`;
-        setInterval(() => {
-            window.location = './../index.html';
-        }, 3000);
-    listaUsuarios.push(usuarioActual);
-    UsuarioActual(usuarioActual);
-    ListarUsuarios();
-    VaciarListaCuentas();
-    ResetearFormulario(formulario);
-    event.preventDefault();
-};
-
 const AgregarCuenta = (event) => {
     const formulario = document.getElementById('formularioCuenta');
     const nombre = document.getElementById('nombre').value;
@@ -35,26 +15,15 @@ const ResetearFormulario = (formulario) => {
     formulario.reset();
 };
 
-const UsuarioActual= (usuario) => {
-    usuarioActual = usuario;
-    const nombreUsuarioActual = document.getElementById('nombreUsuarioActual');
+const UsuarioActual = (usuario) => {
+    const usuarioActual = document.getElementById('usuarioActual');
     const elemento = document.createElement('span');
 
-    nombreUsuarioActual.innerHTML = '';
     elemento.innerHTML = `<span>Usuario Actual: <strong>${usuario.nombre}</strong></span>`;
-    nombreUsuarioActual.appendChild(elemento);
+    usuarioActual.appendChild(elemento);
 
-    ListarCuentas(usuarioActual);
+    ListarCuentas(usuario);
 }
-
-const ListarUsuarios = () => {
-    const comboListaUsuario = document.getElementById('listaUsuarios');
-    let texto = `<option class="dropdown-item" href="#">Cambiar usuario</option>`;
-    listaUsuarios.forEach(e => {
-        texto += `<option class="dropdown-item" href="#">${e.nombre}</option>`;
-    });
-    comboListaUsuario.innerHTML = texto;
-};
 
 const ListarCuentas = (usuario) => {
     const listaCuenta = document.getElementById('listaCuentas');
@@ -87,9 +56,3 @@ const VaciarListaCuentas = () => {
         elemento.removeChild(elemento.firstChild);
     }
 }
-
-const CambiarUsuario = () => {
-    let e = document.getElementById("listaUsuarios");
-    let strUsuario = e.options[e.selectedIndex].text;
-    UsuarioActual(listaUsuarios.find(e => strUsuario == e.nombre));
-};

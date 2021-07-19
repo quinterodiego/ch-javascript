@@ -1,15 +1,12 @@
-const Guardar = () => {
-    let usuarios = JSON.stringify(listaUsuarios);
-    localStorage.setItem("usuarios", usuarios);
+const GuardarUsuario = () => {
+    let usuario = JSON.stringify(usuarioActual);
+    localStorage.setItem("usuario", usuario);
 };
 
-const Borrar = () => {
-    localStorage.clear();
-};
-
-const CargarUsuarios = () => {
+const CargarUsuario = () => {
     if(localStorage.length > 0){
-        listaUsuarios = JSON.parse(localStorage.getItem("usuarios"));
-        ListarUsuarios();
+        usuario = JSON.parse(localStorage.getItem("usuario"));
+        usuarioActual = usuario;
+        UsuarioActual(usuarioActual);
     }
 };

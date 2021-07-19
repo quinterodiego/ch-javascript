@@ -1,5 +1,1 @@
-CargarUsuarios();
-
-Guardar();
-
-Borrar();
+CargarUsuario();
