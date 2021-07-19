@@ -6,6 +6,10 @@ const CrearUsuario = (event) => {
     const formulario = document.getElementById('crear-usuario');
     nombreUsuario = document.getElementById('usuario').value;
     usuarioActual = new Usuario(nombreUsuario);
+    mensajeUsuario.innerHTML = `Bienvenido ${usuarioActual}`;
+        setInterval(() => {
+            window.location = './../index.html';
+        }, 3000);
     listaUsuarios.push(usuarioActual);
     UsuarioActual(usuarioActual);
     ListarUsuarios();

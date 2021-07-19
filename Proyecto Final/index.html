@@ -11,15 +11,6 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
-                <div class="logo"></div>
-                <a class="navbar-brand d-flex align-items-center" href="./index.html">
-                    <!--<i class="fas fa-file-invoice-dollar p-2"></i>-->
-                    <h1>Control Personal de Cuentas</h1>
-                </a>
-            </nav>
-        </header>
         <div class="row pt-5 align-items-center">
             <div class="col-md-6 logo-cover"></div>
             <div class="col-md-6">
@@ -27,20 +18,20 @@
                     <div class="col">
                         <div class="card">
                             <div class="card-header text-center">
-                                <h4>Crear Usuario</h4>
+                                <h4>Control Personal de Cuentas</h4>
                             </div>
                             <form id="crear-usuario">
                                 <div class="form-row align-items-center justify-content-center">
-                                    <div class="col-auto">
-                                        <div class="form-group">
+                                    <div class="col-md-6 p-4 ">
+                                        <div class="form-group ">
                                             <label for="">Usuario</label>
                                             <input type="text" id="usuario" placeholder="Ingrese un nombre" class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                        <label for="">Password</label>
-                                            <input type="password" id="password" placeholder="usuario"  class="form-control">
+                                        <div class="form-group ">
+                                        <label for="">Contraseña</label>
+                                        <input type="password" id="password" placeholder="usuario"  class="form-control">
                                         </div>
-                                        <button type="submit" value="Crear" class="btn btn-primary" onclick="CrearUsuario(event)">Crear</button>
+                                        <button type="submit" class="btn bg-primary text-white w-100" onclick="CrearUsuario(event)">Crear cuenta</button>
                                     </div>
                                 </div>
                             </form>
@@ -49,18 +40,18 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="alert alert-success text-center" id="nombreUsuarioActual">
-                            Debe crear o elegir un usuario
+                        <div class="alert alert-success text-center" id="mensajeUsuario">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <footer>
-        <div class="footer w-100 text-center p-5">
-            Control Personal de Cuentas - Todos los derechos reservados &copy; 2021
-        </div>
-    </footer>
+        <footer>
+            <div class="footer w-100 text-center p-5">
+                Control Personal de Cuentas - Todos los derechos reservados &copy; 2021
+            </div>
+        </footer>
+    </div>
     <script src="./js/usuario.js"></script>
     <script src="./js/cuenta.js"></script>
     <script src="./js/manager.js"></script>
