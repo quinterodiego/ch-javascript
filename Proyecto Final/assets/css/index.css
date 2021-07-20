@@ -24,6 +24,8 @@ h1, h2, h3, h4, h5, h6 {
 .logo-cover {
     width: 500px;
     height: 500px;
+    max-width: 500px;
+    max-height: 500px;
     background-image: url('./../../img/cubo.png');
     background-position: center;
     background-size: cover;
@@ -40,4 +42,3 @@ background-color:#FF735A;
 .yellow {
     background-color: #FAB452;
 }
-
