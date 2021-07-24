@@ -50,3 +50,12 @@ background-color:#FF735A;
 #crear-usuario button:hover {
     opacity: 0.8;
 }
+
+.salir {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.salir:hover {
+    opacity: 0.7;
+}
