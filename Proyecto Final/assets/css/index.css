@@ -54,6 +54,7 @@ background-color:#FF735A;
 .salir {
     font-size: 20px;
     cursor: pointer;
+    color: #000;
 }
 
 .salir:hover {
