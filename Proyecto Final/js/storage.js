@@ -1,11 +1,11 @@
 const GuardarUsuario = (usuario) => {
     listaUsuarios.push(usuario);
-    localStorage.setItem("usuarios", JSON.stringify(listaUsuarios));
+    localStorage.setItem("Usuarios", JSON.stringify(listaUsuarios));
 };
 
 const CargarUsuarios = () => {
     if(localStorage.length > 0) {
-        listaUsuarios = JSON.parse(localStorage.getItem("usuarios"));
+        listaUsuarios = JSON.parse(localStorage.getItem("Usuarios"));
     }
 };
 
@@ -15,5 +15,4 @@ const UsuarioActual = (usuario) => {
     if(usuario.cuentas.length > 0) {
         ListarCuentas(usuario);
     }
-
 }

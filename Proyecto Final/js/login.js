@@ -1,10 +1,18 @@
+var listaUsuarios = [];
+var usuarioActual;
+var nombre = "";
+var email = "";
+var password = "";
+
+CargarUsuarios();
+
 const CrearUsuario = (event) => {
-    const nombre = $('#nombre').val();
-    const email = $('#email').val();
-    const password = $('#password').val();
+    nombre = $('#nombre').val();
+    email = $('#email').val();
+    password = $('#password').val();
 
     if(nombre == '' || email ==  '' || password == '') {
-        return
+        return;
     }
 
     $('#crear-usuario button').attr('data-toggle', 'modal');
@@ -24,3 +32,23 @@ const CrearUsuario = (event) => {
 
     event.preventDefault();
 };
+
+const ValidarNombre = () => {
+        let inputNombre = $('#nombre').val();
+        let nombreExiste = listaUsuarios.find((e) => e.nombre === inputNombre)
+        if(nombreExiste != null) {
+            $('#nombreExiste').removeClass('d-none');
+        }else{
+            $('#nombreExiste').addClass('d-none');
+        }
+}
+
+const ValidarEmail = () => {
+    let inputEmail = $('#email').val();
+    let emailExiste = listaUsuarios.find((e) => e.email === inputEmail)
+    if(emailExiste != null) {
+        $('#emailExiste').removeClass('d-none');
+    }else{
+        $('#emailExiste').addClass('d-none');
+    }
+}
