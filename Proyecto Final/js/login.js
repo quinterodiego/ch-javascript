@@ -1,9 +1,3 @@
-var listaUsuarios = [];
-var usuarioActual;
-var nombre = "";
-var email = "";
-var password = "";
-
 CargarUsuarios();
 
 const CrearUsuario = (event) => {
@@ -15,8 +9,7 @@ const CrearUsuario = (event) => {
         return;
     }
 
-    $('#crear-usuario button').attr('data-toggle', 'modal');
-    $('#crear-usuario button').attr('data-target', '#exampleModalCenter');
+    $('#crear-usuario button').attr('data-toggle', 'modal').attr('data-target', '#exampleModalCenter');
 
     usuarioActual = new Usuario(nombre, email, password);
 

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="./../img/cubo.png">
-    <title>CC - Manager</title>
+    <title>CPC - Manager</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/168160de4f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./../assets/css/index.css">
@@ -15,19 +15,14 @@
 <body>
     <div class="container-fluid">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-center">
-                <div class="logo"></div>
-                <a class="navbar-brand d-flex align-items-center" href="./index.html">
-                    <!--<i class="fas fa-file-invoice-dollar p-2"></i>-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between"> 
+                <a class="navbar-brand d-flex align-items-center" href="./../index.html">
+                    <div class="logo"></div>
                     <h1>Control Personal de Cuentas</h1>
                 </a>
+                <div class="text-center" id="usuarioActual"></div>
             </nav>
         </header>
-        <div class="row pt-5">
-            <div class="col-md-3">
-                <div class="alert alert-success text-center" id="usuarioActual"></div>
-            </div>
-        </div>
         <div class="row pt-2">
             <div class="col-md-3">
                 <div class="card">
@@ -77,12 +72,13 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <div class="footer w-100 text-center p-5">
+                Control Personal de Cuentas - Todos los derechos reservados &copy; 2021
+            </div>
+        </footer>
     </div>
-    <footer>
-        <div class="footer w-100 text-center p-5">
-            Control Personal de Cuentas - Todos los derechos reservados &copy; 2021
-        </div>
-    </footer>
+    <script src="./../js/index.js"></script>
     <script src="./../js/cuenta.js"></script>
     <script src="./../js/storage.js"></script>
     <script src="./../js/manager.js"></script>
