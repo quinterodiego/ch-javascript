@@ -1,6 +1,3 @@
-usuarioActual = JSON.parse(sessionStorage.getItem("UsuarioActual"));
-UsuarioActual(usuarioActual);
-
 const AgregarCuenta = (event) => {
     const nombre = $('#nombre').val();
     const importe = $('#importe').val();
@@ -23,11 +20,6 @@ const ListarCuentas = (usuario) => {
                 <td align="center">${e.nombre}</td>
                 <td align="center">$${e.importe}</td>
                 <td align="center">${e.vencimiento}</td>
-                <td align="center">
-                    <a href="#" class="text-primary">
-                        <i class="far fa-edit"></i>
-                    </a>
-                </td>
                 <td align="center">
                     <a href="#" class="text-danger">
                         <i class="far fa-trash-alt"></i>

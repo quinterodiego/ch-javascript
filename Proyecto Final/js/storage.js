@@ -1,18 +1,19 @@
-const GuardarUsuario = (usuarioActual) => {
-    let usuario = JSON.stringify(usuarioActual);
-    localStorage.setItem("usuario", usuario);
+const GuardarUsuario = (usuario) => {
+    listaUsuarios.push(usuario);
+    localStorage.setItem("usuarios", JSON.stringify(listaUsuarios));
 };
 
-const CargarUsuario = () => {
+const CargarUsuarios = () => {
     if(localStorage.length > 0) {
-        usuario = JSON.parse(localStorage.getItem("usuario"));
-        usuarioActual = usuario;
-        UsuarioActual(usuarioActual);
+        listaUsuarios = JSON.parse(localStorage.getItem("usuarios"));
     }
 };
 
 const UsuarioActual = (usuario) => {
     const elemento = `<span>Usuario: <strong>${usuario.nombre}</strong></span>`;
     $("#usuarioActual").append(elemento);
-    ListarCuentas(usuario);
+    if(usuario.cuentas.length > 0) {
+        ListarCuentas(usuario);
+    }
+
 }

@@ -1,3 +1,2 @@
+var listaUsuarios = [];
 var usuarioActual;
-
-CargarUsuario();

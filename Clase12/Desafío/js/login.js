@@ -2,25 +2,21 @@ const CrearUsuario = (event) => {
     const nombre = $('#nombre').val();
     const email = $('#email').val();
     const password = $('#password').val();
-
-    if(nombre == '' || email ==  '' || password == '') {
-        return
-    }
-
-    $('#crear-usuario button').attr('data-toggle', 'modal');
-    $('#crear-usuario button').attr('data-target', '#exampleModalCenter');
-
     usuarioActual = new Usuario(nombre, email, password);
 
     $('#crear-usuario').trigger('reset');
 
+    const mensajeUsuario = $('#mensajeUsuario');
+    mensajeUsuario.removeClass('d-none');
+    mensajeUsuario.addClass('d-block');
+
     GuardarUsuario(usuarioActual);
 
-    sessionStorage.setItem("UsuarioActual", JSON.stringify(usuarioActual));
+    mensajeUsuario.html(`Bienvenido <strong>${usuarioActual.nombre}</strong>!`);
 
     setInterval(() => {
         window.location = './views/manager.html';
-    }, 1000);
+    }, 2000);
 
     event.preventDefault();
 };

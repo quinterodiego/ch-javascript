@@ -42,11 +42,3 @@ background-color:#FF735A;
 .yellow {
     background-color: #FAB452;
 }
-
-#crear-usuario button {
-    background-color: #267486;
-}
-
-#crear-usuario button:hover {
-    opacity: 0.8;
-}

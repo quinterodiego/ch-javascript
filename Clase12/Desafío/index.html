@@ -14,7 +14,7 @@
 <body>
     <div class="container-fluid">
         <div class="row pt-5 align-items-center justify-content-center">
-            <div class="col-md-6 logo-cover"></div>
+            <div class="col-md-4 logo-cover"></div>
             <div class="col-md-4">
                 <div class="row">
                     <div class="col">
@@ -24,34 +24,30 @@
                             </div>
                             <form id="crear-usuario">
                                 <div class="form-row align-items-center justify-content-center">
-                                    <div class="col-md-8 p-4 ">
-                                        <div class="form-group">
-                                            <label for="nombre">Nombre</label>
-                                            <input type="text" id="nombre" name="nombre" placeholder="Ingrese un nombre" class="form-control" required>
+                                    <div class="col-md-6 p-4 ">
+                                        <div class="form-group ">
+                                            <label for="">Nombre</label>
+                                            <input type="text" id="nombre" placeholder="Ingrese un nombre" class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="email" id="email" name="email" placeholder="Ingrese un email" class="form-control" required>
+                                        <div class="form-group ">
+                                            <label for="">Email</label>
+                                            <input type="email" id="email" placeholder="Ingrese un email" class="form-control">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="password">Contraseña</label>
-                                            <input type="password" id="password" name="password" placeholder="Ingrese una contraseña"  class="form-control" required>
+                                        <div class="form-group ">
+                                            <label for="">Contraseña</label>
+                                            <input type="password" id="password" placeholder="Ingrese una contraseña"  class="form-control">
                                         </div>
-                                        <button type="submit" class="btn text-white w-100"   onclick="CrearUsuario(event)">Crear cuenta</button>
+                                        <button type="submit" class="btn bg-primary text-white w-100" onclick="CrearUsuario(event)">Crear cuenta</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Ingresando, por favor espere un instante...</h5>
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-success text-center d-none" id="mensajeUsuario">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,11 +58,12 @@
             </div>
         </footer>
     </div>
-    <script src="./js/index.js"></script>
     <script src="./js/login.js"></script>
     <script src="./js/usuario.js"></script>
     <script src="./js/cuenta.js"></script>
+    <script src="./js/manager.js"></script>
     <script src="./js/storage.js"></script>
+    <script src="./js/index.js"></script>
     <!-- JS Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
