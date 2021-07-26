@@ -27,25 +27,46 @@
                                 <div class="form-row align-items-center justify-content-center">
                                     <div class="col-md-8 p-4">
                                         <div class="form-group">
-                                            <label for="nombre">Nombre</label><label class="alert-danger p-0 ml-2 d-none" id="nombreExiste">Este nombre ya existe!</label>
+                                            <label for="nombre">Nombre</label>
+                                            <label class="alert-danger p-0 ml-2 d-none" id="nombreExiste">Este nombre ya existe!</label>
                                             <input type="text" id="nombre" name="nombre" placeholder="Ingrese un nombre" class="form-control" required onchange="ValidarNombre()">
                                         </div>
                                         <div class="form-group">
-                                            <label for="email">Email</label><label class="alert-danger p-0 ml-2 d-none"  id="emailExiste">Este email ya existe!</label>
+                                            <label for="email">Email</label>
+                                            <label class="alert-danger p-0 ml-2 d-none"  id="emailExiste">Este email ya existe!</label>
                                             <input type="email" id="email" name="email" placeholder="Ingrese un email" class="form-control" required onchange="ValidarEmail()">
                                         </div>
                                         <div class="form-group">
                                             <label for="password">Contraseña</label>
                                             <input type="password" id="password" name="password" placeholder="Ingrese una contraseña"  class="form-control" required>
                                         </div>
-                                        <button type="submit" class="btn text-white w-100"   onclick="CrearUsuario(event)">Crear cuenta</button>
+                                        <button type="submit" class="btn text-white w-100" id="btn-crear-cuenta"  onclick="CrearUsuario(event)">Crear cuenta</button>
+                                        <div class="w-100 text-center p-2"><a href="#" id="mensaje-iniciar-sesion">Iniciar Sesión</a></div>
                                     </div>
                                 </div>
                             </form>
-                            <hr>
-                            <div id="iniciar-sesion" class="align-self-center w-100 col-md-8 p-4">
-                                <button type="submit" class="btn text-white w-100 text-center"   onclick="">Iniciar sesión</button>
-                            </div>
+                            <form id="form-iniciar-sesion">
+                                <div class="form-row align-items-center justify-content-center">
+                                    <div class="col-md-8 p-4">
+                                        <div class="form-group">
+                                            <label for="email-login">Email</label>
+                                            <label class="alert-danger p-0 ml-2 d-none"  id="emailExiste">Este email ya existe!</label>
+                                            <input type="email" id="email-login" name="email-login" placeholder="Ingrese un email" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password-login">Contraseña</label>
+                                            <input type="password" id="password-login" name="password-login" placeholder="Ingrese su contraseña" class="form-control" required>
+                                        </div>
+                                        <div class="w-100 text-center p-2 alert-danger mb-2 d-none" id="login-error">
+                                            <span>Usuario o contraseña son incorrectos</span>
+                                        </div>
+                                        <button type="submit" class="btn text-white w-100" id="btn-iniciar-sesion"  onclick="ValidarUsuario(event)">Iniciar Sesión</button>
+                                        <div class="w-100 text-center p-2">
+                                            <a href="#" id="mensaje-crear-cuenta">Crear Cuenta</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -72,7 +93,6 @@
     <script src="./js/storage.js"></script>
     <script src="./js/login.js"></script>
     <!-- JS Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 </body>

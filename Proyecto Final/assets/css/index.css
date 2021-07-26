@@ -58,9 +58,29 @@ background-color:#FF735A;
 }
 
 .salir:hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-#iniciar-sesion button {
-    background-color: #FAB452;
+#mensaje-iniciar-sesion {
+    color: #267486;
+}
+
+#mensaje-iniciar-sesion:hover{
+    opacity: 0.8;
+}
+
+#btn-iniciar-sesion {
+    background-color: #267486;
+}
+
+#btn-iniciar-sesion button:hover {
+    opacity: 0.8;
+}
+
+#mensaje-crear-cuenta {
+    color: #267486;
+}
+
+#mensaje-crear-cuenta:hover{
+    opacity: 0.8;
 }

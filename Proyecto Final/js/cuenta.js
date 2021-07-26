@@ -1,5 +1,6 @@
 class Cuenta {
-    constructor(pNombre, pImporte, pVencimiento){
+    constructor(pId, pNombre, pImporte, pVencimiento){
+        this.id = pId;
         this.nombre = pNombre;
         this.importe = pImporte;
         this.vencimiento = pVencimiento;
