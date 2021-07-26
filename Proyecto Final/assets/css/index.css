@@ -60,3 +60,7 @@ background-color:#FF735A;
 .salir:hover {
     opacity: 0.7;
 }
+
+#iniciar-sesion button {
+    background-color: #FAB452;
+}
