@@ -22,8 +22,3 @@ const AgregarCuenta = (event) => {
     ListarCuentas(usuarioActual);
     event.preventDefault();
 };
-
-const eliminarCuenta = (id) => {
-    usuarioActual.cuentas.splice(id, 1);
-    ListarCuentas();
-}
