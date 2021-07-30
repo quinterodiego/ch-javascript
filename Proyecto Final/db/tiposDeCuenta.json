@@ -1,0 +1,29 @@
+[
+    {
+        "tipo": "Tarjeta de Crédito"
+    },
+    {
+        "tipo": "Servicio"
+    },
+    {
+        "tipo": "Préstamo"
+    },
+    {
+        "tipo": "Educación"
+    },
+    {
+        "tipo": "Seguro"
+    },
+    {
+        "tipo": "Inversión"
+    },
+    {
+        "tipo": "Transferencia"
+    },
+    {
+        "tipo": "Telefonía"
+    },
+    {
+        "tipo": "Otros"
+    }
+]
