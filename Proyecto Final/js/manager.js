@@ -13,8 +13,9 @@ const AgregarCuenta = (event) => {
     const id = idCuenta;
     const tipo = $('#tipoCuenta').val();
     const nombre = $('#nombre').val();
-    const importe = new Number($('#importe').val()).toLocaleString("es-AR");
-    const vencimiento = $('#vencimiento').val();
+    const importe = parseFloat($('#importe').val());
+    const fechaSplit = $('#vencimiento').val().split('-');
+    const vencimiento = fechaSplit[2] + '-' + '' + fechaSplit[1] + '-' + fechaSplit[0];
     const cuenta = new Cuenta(id, tipo, nombre, importe, vencimiento);
     usuarioActual.cuentas.push(cuenta);
     sessionStorage.setItem("UsuarioActual", JSON.stringify(usuarioActual));

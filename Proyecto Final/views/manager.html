@@ -15,12 +15,15 @@
 <body>
     <div class="container-fluid">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between"> 
-                <a class="navbar-brand d-flex align-items-center" href="./../index.html">
-                    <div class="logo"></div>
-                    <h1>Control Personal de Cuentas</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
+                    <img src="./../img/cubo.png" alt="">
+                    <h1>CPC</h1>
                 </a>
-                <div class="sesion d-flex align-items-center">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="sesion d-flex align-items-center ml-2 ml-auto">
                     <div class="text-center mr-3" id="usuarioActual"></div>
                     <a href="./../index.html"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Salir"><i class="fas fa-sign-out-alt salir"></span></i></a>
                 </div>
@@ -48,7 +51,7 @@
                         </div>
                         <div class="form-group mt-3">
                             <label class="form-label">Vencimiento</label>
-                            <input type="date" id="vencimiento" class="form-control mt-3">
+                            <input type="date" id="vencimiento" class="form-control mt-3" value="">
                         </div>
                         <div class="d-grid gap-2 mt-3">
                             <button type="submit" value="Agregar" class="btn btn-primary" onclick="AgregarCuenta(event)">Agregar</button>

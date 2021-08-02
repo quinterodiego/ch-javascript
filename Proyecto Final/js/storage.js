@@ -53,15 +53,15 @@ const ListarCuentas = (usuario) => {
                     </td>
                 </tr>
             `;
-            total =+ e.importe;
+            total += e.importe;
         })
         listaCuenta.html(texto);
         texto = `
             <tr>
                 <th scope="col" align="center"></th>
                 <th scope="col" align="center"></th>
-                <th scope="col" align="center">Total $${total}</th>
                 <th scope="col" align="center"></th>
+                <th scope="col" align="center">Total $${total}</th>
                 <th scope="col" align="center"></th>
                 <th scope="col" align="center"></th>
             </tr>
@@ -74,7 +74,7 @@ const ListarCuentas = (usuario) => {
 };
 
 const UsuarioActual = (usuario) => {
-    const elemento = `<span>Usuario: <strong>${usuario.nombre}</strong></span>`;
+    const elemento = `<span><strong>${usuario.nombre}</strong></span>`;
     $("#usuarioActual").append(elemento);
     if(usuario.cuentas.length > 0) {
         ListarCuentas(usuario);
