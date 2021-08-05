@@ -8,6 +8,13 @@ UsuarioActual(usuarioActual);
 
 var idCuenta = 0;
 
+const CalcularPresupuesto = (event) => {
+    usuarioActual.presupuesto = $('#inputPresupuesto').val();
+    console.log(usuarioActual.presupuesto);
+    $('#btnPresupuesto').html("Editar");
+    event.preventDefault();
+}
+
 const AgregarCuenta = (event) => {
     idCuenta = usuarioActual.cuentas.length + 1;
     const id = idCuenta;
