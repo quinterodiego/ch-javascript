@@ -12,20 +12,20 @@
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg-dark">
     <div class="container-fluid">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg ">
                 <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
                     <img src="./../img/cubo.png" alt="">
-                    <h1>CPC</h1>
+                    <h1 class="">DoSan</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="sesion d-flex align-items-center ml-2 ml-auto">
-                    <div class="text-center mr-3" id="usuarioActual"></div>
-                    <a href="./../index.html"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Salir"><i class="fas fa-sign-out-alt salir"></span></i></a>
+                    <div class="text-center mr-3 " id="usuarioActual"></div>
+                    <a href="./../index.html"><span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Salir"><i class="fas fa-sign-out-alt salir text-white"></span></i></a>
                 </div>
             </nav>
         </header>
@@ -33,7 +33,7 @@
             <div class="col-md-3 text-center">
                 <form id="formularioCuenta" class="card-body">
                     <div class="form-group d-flex align-items-center m-0">
-                        <label class="form-label m-2">Presupuesto Mensual</label>
+                        <label class="form-label m-2 ">Presupuesto Mensual</label>
                         <input name="presupuesto" id="inputPresupuesto" class="form-control m-2">
                         <button class="btn btn-primary" id="btnPresupuesto" onclick="CalcularPresupuesto(event)">Calcular</button>
                     </div>
@@ -42,26 +42,26 @@
         </div>
         <div class="row pt-2">
             <div class="col-md-3">
-                <div class="card">
+                <div class="card bg-dark">
                     <div class="card-header text-center">
-                        <h4>Agregar Cuenta</h4>
+                        <h4 class="">Agregar Cuenta</h4>
                     </div>
                     <form id="formularioCuenta" class="card-body">
                         <div class="form-group">
-                            <label class="form-label">Tipo</label>
+                            <label class="form-label ">Tipo</label>
                             <br>
                             <select name="tipoCuenta" id="tipoCuenta" class="form-control"></select>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Nombre</label>
+                            <label class="form-label ">Nombre</label>
                             <input type="text" id="nombre" placeholder="Ingrese un nombre" class="form-control mt-3">
                         </div>
                         <div class="form-group mt-3">
-                            <label class="form-label">Importe</label>
+                            <label class="form-label ">Importe</label>
                             <input type="text" id="importe" placeholder="Ingrese un importe" class="form-control mt-3">
                         </div>
                         <div class="form-group mt-3">
-                            <label class="form-label">Vencimiento</label>
+                            <label class="form-label ">Vencimiento</label>
                             <input type="date" id="vencimiento" class="form-control mt-3" value="">
                         </div>
                         <div class="d-grid gap-2 mt-3">
@@ -72,11 +72,11 @@
             </div>
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header text-center">
+                    <div class="card-header text-center bg-dark">
                         <h4>Lista de Cuentas</h4>
                     </div>
                     <div class="card text-center">
-                        <table class="table table-hover table-sm m-0">
+                        <table class="table table-hover table-sm m-0 table-dark">
                             <thead>
                                 <tr>
                                     <th scope="col">Pagado</th>
@@ -97,7 +97,7 @@
             </div>
         </div>
         <footer>
-            <div class="footer w-100 text-center p-5">
+            <div class="footer w-100 text-center p-5 text-white">
                 Control Personal de Cuentas - Todos los derechos reservados &copy; 2021
             </div>
         </footer>
