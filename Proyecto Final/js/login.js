@@ -40,15 +40,18 @@ const ValidarEmail = () => {
     }
 }
 
-$('#mensaje-iniciar-sesion').click(function() {
-    $('#crear-usuario').hide('slow');
-    $('#form-iniciar-sesion').show('slow');
-})
 
-$('#mensaje-crear-cuenta').click(function() {
+const IrAIniciarSesion = (event) => {
+        $('#crear-usuario').hide('slow');
+        $('#form-iniciar-sesion').show('slow');
+        event.preventDefault();
+}
+
+const IrACrearCuenta = (event) => {
     $('#form-iniciar-sesion').hide('slow');
     $('#crear-usuario').show('slow');
-})
+    event.preventDefault();
+}
 
 const ValidarUsuario = (e) => {
     let email = $('#email-login').val();

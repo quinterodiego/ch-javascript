@@ -18,7 +18,7 @@
             <nav class="navbar navbar-expand-lg ">
                 <a class="navbar-brand d-flex align-items-center justify-content-center" href="#">
                     <img src="./img/cubo.png" alt="">
-                    <h1 class="">DoSan</h1>
+                    <h1 class="">DO SAN</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -43,8 +43,8 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col">
-                        <div class="card border-0 bg-dark">
-                            <div class="card-header text-center bg-dark border-0">
+                        <div class="card border-1 bg-dark">
+                            <div class="card-header text-center bg-dark border-1">
                                 <h4>Control Personal de Cuentas</h4>
                             </div>
                             <form id="crear-usuario" class="bg-dark">
@@ -68,9 +68,7 @@
                                             <input type="password" id="password" name="password" placeholder="Ingrese una contraseña"  class="form-control" required>
                                         </div>
                                         <button type="submit" class="btn w-100 text-white" id="btn-crear-cuenta"  onclick="CrearUsuario(event)">Crear cuenta</button>
-                                        <div class="w-100 btn text-center mt-1 btn-white">
-                                            <a href="#" id="mensaje-iniciar-sesion">Iniciar Sesión</a>
-                                        </div>
+                                        <button type="submit" class="w-100 btn text-center mt-1 btn-white bg-dark" id="mensaje-iniciar-sesion" onclick="IrAIniciarSesion(event)">Iniciar Sesión</button>
                                     </div>
                                 </div>
                             </form>
@@ -90,9 +88,7 @@
                                             <span>Usuario o contraseña son incorrectos</span>
                                         </div>
                                         <button type="submit" class="btn text-white w-100" id="btn-iniciar-sesion"  onclick="ValidarUsuario(event)">Iniciar Sesión</button>
-                                        <div class="w-100 btn text-center mt-1 btn-white">
-                                            <a href="#" id="mensaje-crear-cuenta" class="text-white">Crear Cuenta</a>
-                                        </div>
+                                        <button type="submit" class="w-100 btn text-center mt-1 btn-white bg-dark text-white" id="mensaje-crear-cuenta" onclick="IrACrearCuenta(event)">Crear Cuenta</button>
                                     </div>
                                 </div>
                             </form>
