@@ -35,7 +35,7 @@
                     <div class="form-group d-flex align-items-center m-0">
                         <label class="form-label m-2 ">Presupuesto Mensual</label>
                         <input name="presupuesto" id="inputPresupuesto" class="form-control m-2">
-                        <button class="btn btn-primary" id="btnPresupuesto" onclick="CalcularPresupuesto(event)">Calcular</button>
+                        <button class="btn" id="btnPresupuesto" onclick="CalcularPresupuesto(event)">Calcular</button>
                     </div>
                 </form>
             </div>
@@ -64,8 +64,8 @@
                             <label class="form-label ">Vencimiento</label>
                             <input type="date" id="vencimiento" class="form-control mt-3" value="">
                         </div>
-                        <div class="d-grid gap-2 mt-3">
-                            <button type="submit" value="Agregar" class="btn btn-primary" onclick="AgregarCuenta(event)">Agregar</button>
+                        <div class="d-grid gap-2 mt-3 text-right">
+                            <button type="submit" value="Agregar" class="btn" id="btnAgregarCuenta" onclick="AgregarCuenta(event)">Agregar</button>
                         </div>
                     </form>
                 </div>

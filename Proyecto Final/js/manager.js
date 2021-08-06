@@ -10,8 +10,8 @@ var idCuenta = 0;
 
 const CalcularPresupuesto = (event) => {
     usuarioActual.presupuesto = $('#inputPresupuesto').val();
-    console.log(usuarioActual.presupuesto);
-    $('#btnPresupuesto').html("Editar");
+    GuardarUsuario(usuarioActual);
+    ListarCuentas(usuarioActual);
     event.preventDefault();
 }
 

@@ -4,8 +4,10 @@ $('#form-iniciar-sesion').hide();
 
 const CrearUsuario = (event) => {
     nombre = $('#nombre').val();
+    apellido = $('#apellido').val();
     email = $('#email').val();
     password = $('#password').val();
+    avatar = `https://ui-avatars.com/api/?name=${nombre}+${apellido}&background=267486&color=fff&size=40`
 
     if(nombre == '' || email ==  '' || password == '') {
         return;
@@ -13,7 +15,7 @@ const CrearUsuario = (event) => {
 
     $('#crear-usuario button').attr('data-toggle', 'modal').attr('data-target', '#exampleModalCenter');
 
-    usuarioActual = new Usuario(nombre, email, password);
+    usuarioActual = new Usuario(nombre, apellido, email, password, avatar);
 
     $('#crear-usuario').trigger('reset');
 
@@ -27,16 +29,6 @@ const CrearUsuario = (event) => {
 
     event.preventDefault();
 };
-
-const ValidarNombre = () => {
-        let inputNombre = $('#nombre').val();
-        let nombreExiste = listaUsuarios.find((e) => e.nombre === inputNombre)
-        if(nombreExiste != null) {
-            $('#nombreExiste').removeClass('d-none');
-        }else{
-            $('#nombreExiste').addClass('d-none');
-        }
-}
 
 const ValidarEmail = () => {
     let inputEmail = $('#email').val();

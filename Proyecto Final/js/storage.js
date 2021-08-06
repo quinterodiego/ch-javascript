@@ -46,7 +46,7 @@ const ListarCuentas = (usuario) => {
                     <td align="center">$${e.importe}</td>
                     <td align="center">${e.vencimiento}</td>
                     <td align="center">
-                        <a href="#" class="text-danger">
+                        <a href="#">
                             <i class="far fa-trash-alt" onclick="eliminarCuenta(${e.id})">
                             </i>
                         </a>
@@ -54,13 +54,18 @@ const ListarCuentas = (usuario) => {
                 </tr>
             `;
             total += e.importe;
+            if (usuarioActual.presupuesto < total){
+                $('#footCuentas').removeClass('alert-success').addClass('alert-danger');
+            }else{
+                $('#footCuentas').removeClass('alert-danger').addClass('alert-success');
+            }
         })
         listaCuenta.html(texto);
         texto = `
             <tr>
                 <th scope="col" align="center"></th>
                 <th scope="col" align="center"></th>
-                <th scope="col" align="center"></th>
+                <th scope="col" align="center">Presupuesto: $${usuarioActual.presupuesto}</th>
                 <th scope="col" align="center">Total $${total}</th>
                 <th scope="col" align="center"></th>
                 <th scope="col" align="center"></th>
@@ -74,7 +79,7 @@ const ListarCuentas = (usuario) => {
 };
 
 const UsuarioActual = (usuario) => {
-    const elemento = `<span><strong>${usuario.nombre}</strong></span>`;
+    const elemento = `<span><strong>${usuario.nombre} ${usuario.apellido}</strong></span><img src="${usuario.avatar}" class="rounded-circle ml-1 mr-1">`;
     $("#usuarioActual").append(elemento);
     if(usuario.cuentas.length > 0) {
         ListarCuentas(usuario);
