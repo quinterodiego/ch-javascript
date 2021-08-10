@@ -1,7 +1,5 @@
 CargarUsuarios();
 
-$('#form-iniciar-sesion').hide();
-
 const CrearUsuario = (event) => {
     nombre = $('#nombre').val();
     apellido = $('#apellido').val();
@@ -63,7 +61,6 @@ const ValidarUsuario = (e) => {
         $('#form-iniciar-sesion').trigger('reset');
         $('#form-iniciar-sesion button').attr('data-toggle', 'modal').attr('data-target', '#exampleModalCenter');
         sessionStorage.setItem("UsuarioActual", JSON.stringify(usuarioActual));
-        console.log("guarde");
         setInterval(() => {
             window.location = './views/manager.html';
         }, 1000);

@@ -4,8 +4,14 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 a:hover {
     cursor: pointer;
+    color: #267486;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,7 +84,7 @@ background-color:#FF735A;
     opacity: 0.7;
 }
 
-#btn-iniciar-sesion, #btn-usuario-json, #btnPresupuesto, #btnAgregarCuenta {
+#btn-iniciar-sesion, #btn-usuario-json, #btnPresupuesto, #btnAgregarCuenta, #btn-ingresar {
     background-color: #267486;
     color: #fff;
 }
