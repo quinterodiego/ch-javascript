@@ -89,7 +89,7 @@ background-color:#FF735A;
     color: #fff;
 }
 
-#btn-iniciar-sesion button:hover {
+#btn-iniciar-sesion:hover, #btn-crear-cuenta:hover {
     opacity: 0.7;
 }
 

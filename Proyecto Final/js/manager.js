@@ -1,5 +1,7 @@
 CargarUsuarios();
 
+CargarIncrementoGasto();
+
 CargarTipoCuenta();
 
 usuarioActual = JSON.parse(sessionStorage.getItem("UsuarioActual"));
@@ -18,12 +20,13 @@ const CalcularPresupuesto = (event) => {
 const AgregarCuenta = (event) => {
     idCuenta = usuarioActual.cuentas.length + 1;
     const id = idCuenta;
+    const ingresoGasto = $('#ingresoGasto').val() === "Ingreso" ? 0 : 1;
     const tipo = $('#tipoCuenta').val();
     const nombre = $('#nombre').val();
     const importe = parseFloat($('#importe').val());
     const fechaSplit = $('#vencimiento').val().split('-');
     const vencimiento = fechaSplit[2] + '-' + '' + fechaSplit[1] + '-' + fechaSplit[0];
-    const cuenta = new Cuenta(id, tipo, nombre, importe, vencimiento);
+    const cuenta = new Cuenta(id, ingresoGasto, tipo, nombre, importe, vencimiento);
     usuarioActual.cuentas.push(cuenta);
     sessionStorage.setItem("UsuarioActual", JSON.stringify(usuarioActual));
     $('#formularioCuenta').trigger('reset');

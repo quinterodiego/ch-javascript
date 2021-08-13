@@ -31,7 +31,7 @@
         </header>
         <div class="row">
             <div class="col-md-3 text-center">
-                <form id="formularioCuenta" class="card-body">
+                <form id="formularioPresupuesto" class="card-body">
                     <div class="form-group d-flex align-items-center m-0">
                         <label class="form-label m-2 ">Presupuesto Mensual</label>
                         <input name="presupuesto" id="inputPresupuesto" class="form-control m-2">
@@ -47,6 +47,11 @@
                         <h4 class="">Agregar Cuenta</h4>
                     </div>
                     <form id="formularioCuenta" class="card-body">
+                        <div class="form-group">
+                            <label class="form-label ">Ingreso/Gasto</label>
+                            <br>
+                            <select name="ingresoGasto" id="ingresoGasto" class="form-control"></select>
+                        </div>
                         <div class="form-group">
                             <label class="form-label ">Tipo</label>
                             <br>
@@ -80,6 +85,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Pagado</th>
+                                    <th scope="col">+ / -</th>
                                     <th scope="col">Tipo</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Importe</th>
@@ -102,7 +108,6 @@
             </div>
         </footer>
     </div>
-    <script src="./../js/index.js"></script>
     <script src="./../js/cuenta.js"></script>
     <script src="./../js/storage.js"></script>
     <script src="./../js/manager.js"></script>

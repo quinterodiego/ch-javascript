@@ -2,10 +2,9 @@ CargarUsuarios();
 
 const CrearUsuario = (event) => {
     nombre = $('#nombre').val();
-    apellido = $('#apellido').val();
     email = $('#email').val();
     password = $('#password').val();
-    avatar = `https://ui-avatars.com/api/?name=${nombre}+${apellido}&background=267486&color=fff&size=40`
+    avatar = `https://ui-avatars.com/api/?name=${nombre}&background=267486&color=fff&size=40`
 
     if(nombre == '' || email ==  '' || password == '') {
         return;
@@ -13,7 +12,7 @@ const CrearUsuario = (event) => {
 
     $('#crear-usuario button').attr('data-toggle', 'modal').attr('data-target', '#exampleModalCenter');
 
-    usuarioActual = new Usuario(nombre, apellido, email, password, avatar);
+    usuarioActual = new Usuario(nombre, email, password, avatar);
 
     $('#crear-usuario').trigger('reset');
 

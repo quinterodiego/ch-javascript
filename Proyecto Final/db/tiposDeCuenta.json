@@ -24,6 +24,9 @@
         "tipo": "Telefonía"
     },
     {
+        "tipo": "Ahorro"
+    },
+    {
         "tipo": "Otros"
     }
 ]
