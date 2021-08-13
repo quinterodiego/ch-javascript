@@ -1,5 +1,5 @@
 const routes = [
-    { path: "/index", action: "index"},
+    { path: "/login", action: "login"},
     { path: "/manager", action: "manager"},
     { path: "/nosotros", action: "nosotros"},
     { path: "/contacto", action: "contacto"}
@@ -11,7 +11,10 @@ const router = () => {
 
     switch (pathDestino.action) {
         case routes[0].action:
-            $("#app").html("Este es el index");
+           $.get("./views/login.html", function(data) {
+                $("#app").html(data);
+                $('#form-iniciar-sesion').hide();
+            });
             break;
         case routes[1].action:
             $.get("./views/manager.html", function(data) {

@@ -84,12 +84,12 @@ background-color:#FF735A;
     opacity: 0.7;
 }
 
-#btn-iniciar-sesion, #btn-usuario-json, #btnPresupuesto, #btnAgregarCuenta, #btn-ingresar {
+#btn-iniciar-sesion, #btn-usuario-json, #btnPresupuesto, #btnAgregarCuenta, #btn-ingresar, #btn-enviar-comentario {
     background-color: #267486;
     color: #fff;
 }
 
-#btn-iniciar-sesion:hover, #btn-crear-cuenta:hover {
+#btn-iniciar-sesion:hover, #btn-crear-cuenta:hover, #btn-enviar-comentario:hover {
     opacity: 0.7;
 }
 
@@ -99,4 +99,24 @@ background-color:#FF735A;
 
 #mensaje-crear-cuenta:hover{
     opacity: 0.7;
+}
+
+#form-contacto textarea {
+    height: 200px;
+}
+
+.rotated{
+	animation-name: rotation;
+	animation-duration: 20s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
 }

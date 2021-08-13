@@ -43,6 +43,7 @@ const ListarCuentas = (usuario) => {
     let texto = "";
     let total = 0;
     let saldo = 0;
+    let presupuesto = parseFloat(usuarioActual.presupuesto);
     if(usuario.cuentas.length > 0){
         usuario.cuentas.map(e => {
             let ingresoGasto = e.ingresoGasto === 0 ? '<span class="text-success font-weight-bold">+</span>' : '<span class="text-danger font-weight-bold">-</span>';
@@ -53,7 +54,7 @@ const ListarCuentas = (usuario) => {
                     <td align="center">${ingresoGasto}</td>
                     <td align="center">${e.tipo}</td>
                     <td align="center">${e.nombre}</td>
-                    <td align="center">$${e.importe}</td>
+                    <td align="center">$ ${e.importe}</td>
                     <td align="center">${e.vencimiento}</td>
                     <td align="center">
                         <a href="#">
@@ -65,8 +66,7 @@ const ListarCuentas = (usuario) => {
             `;
 
             e.ingresoGasto === 0 ? total += e.importe : total -= e.importe;
-            saldo = parseFloat(usuarioActual.presupuesto) + total;
-
+            saldo = (presupuesto + total).toFixed(2);
             if (usuarioActual.presupuesto > saldo){
                 $('#footCuentas').removeClass('alert-success').addClass('alert-danger');
             }else{
@@ -80,8 +80,8 @@ const ListarCuentas = (usuario) => {
                 <th scope="col" align="center"></th>
                 <th scope="col" align="center"></th>
                 <th scope="col" align="center"></th>
-                <th scope="col" align="center">Presupuesto Mensual: $${usuarioActual.presupuesto}</th>
-                <th scope="col" align="center">Saldo $${saldo}</th>
+                <th scope="col" align="center">Presupuesto Mensual: $ ${usuarioActual.presupuesto}</th>
+                <th scope="col" align="center">Saldo $ ${saldo}</th>
                 <th scope="col" align="center"></th>
                 <th scope="col" align="center"></th>
             </tr>

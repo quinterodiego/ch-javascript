@@ -11,7 +11,8 @@ UsuarioActual(usuarioActual);
 var idCuenta = 0;
 
 const CalcularPresupuesto = (event) => {
-    usuarioActual.presupuesto = $('#inputPresupuesto').val();
+    let presupuesto = new Number($('#inputPresupuesto').val());
+    usuarioActual.presupuesto = presupuesto.toFixed(2);
     GuardarUsuario(usuarioActual);
     ListarCuentas(usuarioActual);
     event.preventDefault();
@@ -23,10 +24,10 @@ const AgregarCuenta = (event) => {
     const ingresoGasto = $('#ingresoGasto').val() === "Ingreso" ? 0 : 1;
     const tipo = $('#tipoCuenta').val();
     const nombre = $('#nombre').val();
-    const importe = parseFloat($('#importe').val());
+    const importe = new Number($('#importe').val());
     const fechaSplit = $('#vencimiento').val().split('-');
     const vencimiento = fechaSplit[2] + '-' + '' + fechaSplit[1] + '-' + fechaSplit[0];
-    const cuenta = new Cuenta(id, ingresoGasto, tipo, nombre, importe, vencimiento);
+    const cuenta = new Cuenta(id, ingresoGasto, tipo, nombre, importe.toFixed(2), vencimiento);
     usuarioActual.cuentas.push(cuenta);
     sessionStorage.setItem("UsuarioActual", JSON.stringify(usuarioActual));
     $('#formularioCuenta').trigger('reset');
